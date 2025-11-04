@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom utility classes for the dental theme */
+.dental-gradient {
+  @apply bg-gradient-to-r from-primary to-accent-200;
+}
+
+.dental-card {
+  @apply bg-white border border-accent-100 rounded-xl shadow-dental;
+}
+
+.dental-button-primary {
+  @apply bg-primary text-white font-semibold rounded-lg px-6 py-3 shadow-sm;
+}
+
+.dental-button-secondary {
+  @apply bg-white text-primary border border-primary font-semibold rounded-lg px-6 py-3;
+}
+
+.dental-input {
+  @apply border border-accent-200 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20;
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2s ease-in-out infinite;
+}
+
+/* Custom shadows */
+.shadow-dental-sm {
+  box-shadow: 0 1px 3px 0 rgba(75, 163, 242, 0.1), 0 1px 2px 0 rgba(75, 163, 242, 0.06);
+}
+
+.shadow-dental {
+  box-shadow: 0 4px 6px -1px rgba(75, 163, 242, 0.1), 0 2px 4px -1px rgba(75, 163, 242, 0.06);
+}
+
+.shadow-dental-lg {
+  box-shadow: 0 10px 15px -3px rgba(75, 163, 242, 0.1), 0 4px 6px -2px rgba(75, 163, 242, 0.05);
+}
+
+/* Custom transitions */
+.transition-dental {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom text styles */
+.text-dental-heading {
+  @apply text-2xl font-bold text-gray-900 leading-tight;
+}
+
+.text-dental-subheading {
+  @apply text-lg font-semibold text-gray-800 leading-snug;
+}
+
+.text-dental-body {
+  @apply text-base text-gray-700 leading-relaxed;
+}
+
+.text-dental-caption {
+  @apply text-sm text-gray-600 leading-normal;
+}
+
+/* Custom spacing utilities */
+.space-y-dental > * + * {
+  margin-top: 1.5rem;
+}
+
+.space-x-dental > * + * {
+  margin-left: 1.5rem;
+}
+
+/* Custom component utilities */
+.btn-dental {
+  @apply px-6 py-3 rounded-lg font-semibold transition-dental focus:outline-none focus:ring-2 focus:ring-offset-2;
+}
+
+.btn-dental-primary {
+  @apply btn-dental bg-primary text-white hover:bg-accent-500 focus:ring-primary;
+}
+
+.btn-dental-secondary {
+  @apply btn-dental bg-white text-primary border-2 border-primary hover:bg-accent-50 focus:ring-primary;
+}
+
+.card-dental {
+  @apply bg-white rounded-xl border border-accent-100 p-6 shadow-dental transition-dental hover:shadow-dental-lg;
+}
+
+.input-dental {
+  @apply w-full px-4 py-3 rounded-lg border border-accent-200 text-gray-900 placeholder-gray-400 transition-dental focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20;
+}
+
+/* Loading and animation states */
+.loading-dots::after {
+  content: '';
+  animation: loading-dots 1.5s infinite;
+}
+
+@keyframes loading-dots {
+  0% {
+    content: '';
+  }
+  25% {
+    content: '.';
+  }
+  50% {
+    content: '..';
+  }
+  75% {
+    content: '...';
+  }
+  100% {
+    content: '';
+  }
+}
+
+/* Responsive utilities for dental theme */
+@media (max-width: 640px) {
+  .text-dental-heading-responsive {
+    @apply text-xl font-bold text-gray-900;
+  }
+
+  .card-dental-responsive {
+    @apply p-4;
+  }
+}
+
+/* Accessibility improvements */
+.sr-only-dental {
+  @apply sr-only;
+}
+
+.focus-visible-dental:focus-visible {
+  @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-white;
+}
