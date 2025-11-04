@@ -1,0 +1,74 @@
+{
+  "expo": {
+    "name": "Trayar - Dental Feedback",
+    "slug": "trayar-dental-feedback",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#4BA3F2"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.trayar.dentalfeedback",
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "NSMicrophoneUsageDescription": "This app needs access to your microphone to record dental conversations for feedback analysis.",
+        "NSDocumentsFolderUsageDescription": "This app needs access to documents to upload audio files for transcription."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#4BA3F2"
+      },
+      "package": "com.trayar.dentalfeedback",
+      "versionCode": 1,
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/images/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-font",
+      "expo-av",
+      "expo-document-picker",
+      "expo-media-library",
+      "expo-secure-store",
+      "expo-linear-gradient",
+      "expo-haptics",
+      "expo-file-system",
+      "expo-image-picker",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "newArchEnabled": true
+          },
+          "android": {
+            "newArchEnabled": true
+          }
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "trayar-dental-feedback"
+      }
+    }
+  }
+}
